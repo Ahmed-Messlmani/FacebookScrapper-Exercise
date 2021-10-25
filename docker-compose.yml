@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    volumes:
+      - .:/application
+    ports:
+      - 8000:8000
+    image: app:application
+    container_name: scrapping_container
+    command: uvicorn src.main:app --host 127.0.0.1
+    
+    
